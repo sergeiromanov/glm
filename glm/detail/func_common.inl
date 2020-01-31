@@ -581,9 +581,9 @@ namespace detail
 		return detail::compute_smoothstep_vector<L, T, Q, detail::is_aligned<Q>::value>::call(edge0, edge1, x);
 	}
 
-#	if GLM_HAS_CXX11_STL
-		using std::isnan;
-#	else
+//#	if GLM_HAS_CXX11_STL
+//		using std::isnan;
+//#	else
 		template<typename genType>
 		GLM_FUNC_QUALIFIER bool isnan(genType x)
 		{
@@ -607,7 +607,7 @@ namespace detail
 				return std::isnan(x);
 #			endif
 		}
-#	endif
+//#	endif
 
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER vec<L, bool, Q> isnan(vec<L, T, Q> const& v)
